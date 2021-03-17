@@ -13,13 +13,13 @@ function showResult(){
 
     // Calculate the total valor
     let resultRank = upgradedGear.value - lowGear.value;
-    let result = gear.value * resultRank;
-    displayValor.textContent = "Il faut au total : " + result + " point de vaillance";
+    let totalValor = gear.value * resultRank;
+    displayValor.textContent = "Il faut au total : " + totalValor + " point de vaillance";
 
 
     // calculate the number of dungeon that we need
 
-    let numberDungeon = Math.ceil(result / 135);
+    let numberDungeon = Math.ceil(totalValor / 135);
     displayDungeon.textContent = " - "  + numberDungeon + " donjon";
 
     // Calculate the total time
@@ -29,11 +29,11 @@ function showResult(){
 
     // Calculate the total of epic quest
 
-    let totalEpicQuest = result / 50;
+    let totalEpicQuest = Math.ceil(totalValor / 50);
     displayEpicQuest.textContent = " - " + totalEpicQuest + " Appels épique";
 
     // Calculate the total of blue quest
 
-    let totalBlueQuest = result / 35;
+    let totalBlueQuest = Math.ceil(totalValor / 35);
     displayBlueQuest.textContent = " - " + totalBlueQuest + " Appels bleu";
 }
