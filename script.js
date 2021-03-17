@@ -8,6 +8,7 @@ let displayTime = document.getElementById('displayTime');
 let displayEpicQuest = document.getElementById('displayEpicQuest');
 let displayBlueQuest = document.getElementById('displayBlueQuest');
 
+displayNoValor();
 
 function showResult(){
 
@@ -15,7 +16,7 @@ function showResult(){
     let resultRank = upgradedGear.value - lowGear.value;
     let totalValor = gear.value * resultRank;
 
-    if(totalValor >= 0){
+    if(totalValor >= 1){
 
         displayValor.textContent = "Il faut au total : " + totalValor + " point de vaillance";
 
@@ -40,11 +41,15 @@ function showResult(){
         displayBlueQuest.textContent = " - " + totalBlueQuest + " Appels bleu";
 
     }else{
-        displayValor.textContent = "Il faut au total : 0 point de vaillance";
-        displayDungeon.textContent = " - 0 donjon";
-        displayTime.textContent = " - 0 heures, avec une moyenne de 12 minutes par donjon +2";
-        displayEpicQuest.textContent = " - 0 Appels épique";
-        displayBlueQuest.textContent = " - 0 Appels bleu";
+        displayNoValor();
     }
 
+}
+
+function displayNoValor(){
+    displayValor.textContent = "Il faut au total : 0 point de vaillance";
+    displayDungeon.textContent = " - 0 donjon";
+    displayTime.textContent = " - 0 heures";
+    displayEpicQuest.textContent = " - 0 Appels épique";
+    displayBlueQuest.textContent = " - 0 Appels bleu";
 }
