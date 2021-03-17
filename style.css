@@ -4,11 +4,8 @@ body{
 }
 
 p{
-font-size: 1.2em;
-}
-
-p{
     margin-left: 5%;
+    font-size: 1.2em;
 }
 
 h1{
