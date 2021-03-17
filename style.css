@@ -1,3 +1,8 @@
+body{
+    background-color: black;
+    color: white;
+}
+
 p,select{
 font-size: 1.3em;
 }
